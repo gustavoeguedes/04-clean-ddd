@@ -1,4 +1,4 @@
-import { QuestionsRepository } from '../../../repositories/questions-repository'
+import { QuestionsRepository } from '../repositories/questions-repository'
 import { Question } from '../../enterprise/entities/question'
 import { CreateQuestionUseCase } from './create-question'
 

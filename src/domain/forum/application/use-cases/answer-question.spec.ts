@@ -1,9 +1,10 @@
+import { Answer } from '../../enterprise/entities/answer'
 import { AnswerQuestionUseCase } from './answer-question'
-import { AnswersRepository } from '../repositories/answers-repository'
+import { AnswersRepository } from '@/domain/repositories/answers-repository'
 
 const fakeAnswersRepository: AnswersRepository = {
-  create: async (answer) => {
-
+  create: async (answer: Answer) => {
+    console.log(answer.authorId)
   },
 }
 

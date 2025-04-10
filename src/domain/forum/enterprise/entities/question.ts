@@ -9,7 +9,7 @@ interface QuestionProps {
   bestAnswerId?: UniqueEntityId
   title: string
   content: string
-  slug?: Slug
+  slug: Slug
   createdAt: Date
   updatedAt?: Date
 }

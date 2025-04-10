@@ -15,8 +15,6 @@ describe('create Question', async () => {
       title: 'Título da pergunta',
       content: 'Nova pergunta',
     })
-
-    console.log(question)
     expect(question.id).toBeTruthy()
   })
 })

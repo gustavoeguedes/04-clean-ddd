@@ -1,6 +1,7 @@
 import { QuestionsRepository } from '../repositories/questions-repository'
 import { Question } from '../../enterprise/entities/question'
 import { UniqueEntityId } from '@/core/entities/unique-entity-id'
+import { Slug } from '../../enterprise/entities/value-objects/slug'
 
 interface CreateQuestionUseCaseRequest {
   authorId: string
@@ -24,6 +25,7 @@ export class CreateQuestionUseCase {
       authorId: new UniqueEntityId(authorId),
       title,
       content,
+      slug: new Slug(title),
     })
 
     await this.questionsRepository.create(question)

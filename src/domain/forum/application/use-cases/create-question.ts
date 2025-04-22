@@ -25,7 +25,7 @@ export class CreateQuestionUseCase {
       authorId: new UniqueEntityId(authorId),
       title,
       content,
-      slug: new Slug(title),
+      slug: Slug.create(title),
     })
 
     await this.questionsRepository.create(question)

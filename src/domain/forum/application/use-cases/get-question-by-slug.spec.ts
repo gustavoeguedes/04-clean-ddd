@@ -12,6 +12,7 @@ beforeEach(() => {
 describe('Get Question By Slug', async () => {
   it('should be able to get a question by slug', async () => {
     const newQuestion = makeQuestion()
+    console.log(newQuestion)
     await inMemoryQuestionsRepository.create(newQuestion)
     const { question } = await sut.execute({
       slug: 'titulo-da-pergunta',

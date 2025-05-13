@@ -6,12 +6,12 @@ import { makeAnswer } from '../../../../../test/factories/make-answer'
 
 let inMemoryAnswersRepository: InMemoryAnswersRepository
 let sut: DeleteAnswerUseCase
-beforeEach(() => {
-  inMemoryAnswersRepository = new InMemoryAnswersRepository()
-  sut = new DeleteAnswerUseCase(inMemoryAnswersRepository)
-})
 
 describe('Delete answer', async () => {
+  beforeEach(() => {
+    inMemoryAnswersRepository = new InMemoryAnswersRepository()
+    sut = new DeleteAnswerUseCase(inMemoryAnswersRepository)
+  })
   it('should be able to delete a answer', async () => {
     const newAnswer = makeAnswer(
       {

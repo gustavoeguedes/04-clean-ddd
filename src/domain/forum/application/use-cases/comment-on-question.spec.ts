@@ -7,16 +7,16 @@ let inMemoryQuestionCommentsRepository: InMemoryQuestionCommentsRepository
 let inMemoryQuestionsRepository: InMemoryQuestionsRepository
 let sut: CommentOnQuestionUseCase
 
-beforeEach(() => {
-  inMemoryQuestionCommentsRepository = new InMemoryQuestionCommentsRepository()
-  inMemoryQuestionsRepository = new InMemoryQuestionsRepository()
-  sut = new CommentOnQuestionUseCase(
-    inMemoryQuestionsRepository,
-    inMemoryQuestionCommentsRepository,
-  )
-})
-
 describe('Comment on Question', async () => {
+  beforeEach(() => {
+    inMemoryQuestionCommentsRepository =
+      new InMemoryQuestionCommentsRepository()
+    inMemoryQuestionsRepository = new InMemoryQuestionsRepository()
+    sut = new CommentOnQuestionUseCase(
+      inMemoryQuestionsRepository,
+      inMemoryQuestionCommentsRepository,
+    )
+  })
   it('should be able to comment on question', async () => {
     const question = makeQuestion()
 

@@ -5,12 +5,12 @@ import { UniqueEntityId } from '../../../../core/entities/unique-entity-id'
 
 let inMemoryAnswersRepository: InMemoryAnswersRepository
 let sut: FetchQuestionAnswersUseCase
-beforeEach(() => {
-  inMemoryAnswersRepository = new InMemoryAnswersRepository()
-  sut = new FetchQuestionAnswersUseCase(inMemoryAnswersRepository)
-})
 
 describe('Fetch Question Answers', async () => {
+  beforeEach(() => {
+    inMemoryAnswersRepository = new InMemoryAnswersRepository()
+    sut = new FetchQuestionAnswersUseCase(inMemoryAnswersRepository)
+  })
   it('should be able to fetch question answers', async () => {
     await inMemoryAnswersRepository.create(
       makeAnswer({ questionId: new UniqueEntityId('question-1') }),

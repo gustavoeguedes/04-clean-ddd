@@ -5,12 +5,12 @@ import { UniqueEntityId } from '../../../../core/entities/unique-entity-id'
 
 let inMemoryAnswersRepository: InMemoryAnswersRepository
 let sut: EditAnswerUseCase
-beforeEach(() => {
-  inMemoryAnswersRepository = new InMemoryAnswersRepository()
-  sut = new EditAnswerUseCase(inMemoryAnswersRepository)
-})
 
 describe('Edit answer', async () => {
+  beforeEach(() => {
+    inMemoryAnswersRepository = new InMemoryAnswersRepository()
+    sut = new EditAnswerUseCase(inMemoryAnswersRepository)
+  })
   it('should be able to edit a answer', async () => {
     const newAnswer = makeAnswer(
       {

@@ -4,12 +4,11 @@ import { AnswerQuestionUseCase } from './answer-question'
 let inMemoryAnswersRepository: InMemoryAnswersRepository
 let sut: AnswerQuestionUseCase
 
-beforeEach(() => {
-  inMemoryAnswersRepository = new InMemoryAnswersRepository()
-  sut = new AnswerQuestionUseCase(inMemoryAnswersRepository)
-})
-
 describe('Answer question', () => {
+  beforeEach(() => {
+    inMemoryAnswersRepository = new InMemoryAnswersRepository()
+    sut = new AnswerQuestionUseCase(inMemoryAnswersRepository)
+  })
   it('should be able create an answer', async () => {
     const { answer } = await sut.execute({
       instructorId: '1',

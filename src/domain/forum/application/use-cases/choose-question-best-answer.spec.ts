@@ -8,16 +8,16 @@ import { makeQuestion } from '../../../../../test/factories/make-question'
 let inMemoryAnswersRepository: InMemoryAnswersRepository
 let inMemoryQuestionsRepository: InMemoryQuestionsRepository
 let sut: ChooseQuestionBestAnswerUseCase
-beforeEach(() => {
-  inMemoryAnswersRepository = new InMemoryAnswersRepository()
-  inMemoryQuestionsRepository = new InMemoryQuestionsRepository()
-  sut = new ChooseQuestionBestAnswerUseCase(
-    inMemoryAnswersRepository,
-    inMemoryQuestionsRepository,
-  )
-})
 
 describe('Choose Question Best Answer', async () => {
+  beforeEach(() => {
+    inMemoryAnswersRepository = new InMemoryAnswersRepository()
+    inMemoryQuestionsRepository = new InMemoryQuestionsRepository()
+    sut = new ChooseQuestionBestAnswerUseCase(
+      inMemoryAnswersRepository,
+      inMemoryQuestionsRepository,
+    )
+  })
   it('should be able to choose the question best answer', async () => {
     const question = makeQuestion()
     const answer = makeAnswer({

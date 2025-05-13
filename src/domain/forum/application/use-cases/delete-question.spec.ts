@@ -5,12 +5,12 @@ import { UniqueEntityId } from '../../../../core/entities/unique-entity-id'
 
 let inMemoryQuestionsRepository: InMemoryQuestionsRepository
 let sut: DeleteQuestionUseCase
-beforeEach(() => {
-  inMemoryQuestionsRepository = new InMemoryQuestionsRepository()
-  sut = new DeleteQuestionUseCase(inMemoryQuestionsRepository)
-})
 
 describe('Delete question', async () => {
+  beforeEach(() => {
+    inMemoryQuestionsRepository = new InMemoryQuestionsRepository()
+    sut = new DeleteQuestionUseCase(inMemoryQuestionsRepository)
+  })
   it('should be able to delete a question', async () => {
     const newQuestion = makeQuestion(
       {

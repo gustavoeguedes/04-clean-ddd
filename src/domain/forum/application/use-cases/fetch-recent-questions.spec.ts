@@ -4,12 +4,12 @@ import { FetchRecentQuestionsUseCase } from './fetch-recent-questions'
 
 let inMemoryQuestionsRepository: InMemoryQuestionsRepository
 let sut: FetchRecentQuestionsUseCase
-beforeEach(() => {
-  inMemoryQuestionsRepository = new InMemoryQuestionsRepository()
-  sut = new FetchRecentQuestionsUseCase(inMemoryQuestionsRepository)
-})
 
 describe('Fetch Recent Questions', async () => {
+  beforeEach(() => {
+    inMemoryQuestionsRepository = new InMemoryQuestionsRepository()
+    sut = new FetchRecentQuestionsUseCase(inMemoryQuestionsRepository)
+  })
   it('should be able to fetch recent questions', async () => {
     await inMemoryQuestionsRepository.create(
       makeQuestion({ createdAt: new Date('2023-10-01') }),

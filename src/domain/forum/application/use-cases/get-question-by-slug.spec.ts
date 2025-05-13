@@ -4,12 +4,12 @@ import { makeQuestion } from '../../../../../test/factories/make-question'
 
 let inMemoryQuestionsRepository: InMemoryQuestionsRepository
 let sut: GetQuestionBySlugUseCase
-beforeEach(() => {
-  inMemoryQuestionsRepository = new InMemoryQuestionsRepository()
-  sut = new GetQuestionBySlugUseCase(inMemoryQuestionsRepository)
-})
 
 describe('Get Question By Slug', async () => {
+  beforeEach(() => {
+    inMemoryQuestionsRepository = new InMemoryQuestionsRepository()
+    sut = new GetQuestionBySlugUseCase(inMemoryQuestionsRepository)
+  })
   it('should be able to get a question by slug', async () => {
     const newQuestion = makeQuestion()
     console.log(newQuestion)

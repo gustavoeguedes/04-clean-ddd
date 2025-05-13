@@ -16,8 +16,6 @@ describe('Answer question', () => {
       content: 'Nova resposta',
     })
 
-    console.log(inMemoryAnswersRepository)
-
     expect(answer.content).toEqual('Nova resposta')
     expect(inMemoryAnswersRepository.items[0].id).toEqual(answer.id)
   })

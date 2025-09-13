@@ -21,7 +21,9 @@ describe('create Question', async () => {
     expect(inMemoryQuestionsRepository.items[0].title).toEqual(
       value?.question.title,
     )
-    expect(inMemoryQuestionsRepository.items[0].attachments).toEqual([
+    expect(
+      inMemoryQuestionsRepository.items[0].attachments.currentItems,
+    ).toEqual([
       expect.objectContaining({
         attachmentId: new UniqueEntityId('1'),
       }),
